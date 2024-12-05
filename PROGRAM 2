@@ -1,0 +1,41 @@
+import java.util.*;
+class Student
+{
+    String name,branch;
+    int usn,sem;
+    void readdata()
+    {
+        System.out.println("enter the student details:");
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter name:");
+        name=sc.next();
+        System.out.print("Enter branch:");
+        branch=sc.next();
+        System.out.print("Enter usn:");
+        usn=sc.nextInt();
+        System.out.print("Enter semester:");
+        sem=sc.nextInt();
+    }
+    void display()
+    {
+        System.out.println("The student details are");
+        System.out.println("NAME:\t"+name+"\nUSN:"+usn+"\nBRANCH:"+branch+"\nSEMESTER:"+sem);
+    }
+}
+class Student_details
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number of students");
+        int n=sc.nextInt();
+        Student s[]=new Student[10];
+        for(int i=1;i<=n;i++)
+        {
+            s[i]=new Student();
+            s[i].readdata();
+            s[i].display();
+        }
+    }
+
+}
