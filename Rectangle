@@ -1,0 +1,45 @@
+import java.util.*;
+interface Resizable
+{
+    public void resizeheight(int height);
+    public void resizewidth(int width);
+}
+class Rectangle implements Resizable
+{
+    int w,h;
+    Rectangle(int w1,int h1)
+    {
+        w=w1;
+        h=h1;
+    }
+    public void resizeheight(int height)
+    {
+        h=height;
+        System.out.println("new height:"+h);
+    }
+    public void resizewidth(int width)
+    {
+        w=width;
+        System.out.println("new width:"+w);
+    }
+    void display()
+    {
+        System.out.println("the current dimension is:"+w+","+h);
+    }
+}
+class Rectdemo
+{
+    public static void main(String args[])
+    {
+        Rectangle r1=new Rectangle(10,20);
+        r1.display();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter new width");
+        int newwidth=sc.nextInt();
+        System.out.println("enter new height");
+        int newheight=sc.nextInt();
+        r1.resizewidth(newwidth);
+        r1.resizeheight(newheight);
+        r1.display();
+    }
+}
