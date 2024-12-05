@@ -1,0 +1,58 @@
+abstract class Shape
+{
+    abstract void calculatearea();
+    abstract void calculateperimeter();
+}
+class Circle extends Shape
+{
+    double r;
+    Circle(double radius)
+    {
+        r=radius;
+    }
+    void calculatearea()
+    {
+        double area=3.14*r*r;
+        System.out.println("the area of circle is:"+area);
+    }
+     void calculateperimeter()
+    {
+        double per=2*3.14*r;
+        System.out.println("the perimeter of circle is:"+per);
+    }
+}
+class Triangle extends Shape
+{
+    double hyp,base,height;
+    Triangle(double h1,double b,double h2)
+    {
+        hyp=h1;
+        base=b;
+        height=h2;
+    }
+    void calculatearea()
+    {
+        double area=0.5*base*height;
+        System.out.println("the area of triangle is:"+area);
+    }
+     void calculateperimeter()
+    {
+        double per=base+hyp+height;
+        System.out.println("the perimeter of triangle is:"+per);
+    }
+}
+class Shapedemo
+{
+    public static void main(String args[])
+    {
+        Circle c1=new Circle(20);
+        Triangle t1=new Triangle(10,20,30);
+        Shape s;
+        s=c1;
+        s.calculatearea();
+        s.calculateperimeter();
+        s=t1;
+        s.calculatearea();
+        s.calculateperimeter();
+    }
+}
