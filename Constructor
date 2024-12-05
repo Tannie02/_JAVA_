@@ -1,0 +1,69 @@
+class Box
+{
+    int width,height,depth;
+    Box()
+    {
+        width=height=depth=10;
+    }
+    Box(int w,int h,int d)
+    {
+        width=w;
+        height=h;
+        depth=d;
+    }
+    Box(int len)
+    {
+        width=height=depth=len;
+    }
+    void volume()
+    {
+        int vol=width*height*depth;
+        System.out.println("the volume of box:"+vol);
+    }
+}
+class Boxweight extends Box
+{
+    int weight;
+    Boxweight()
+    {
+        super();
+        weight=18;
+    }
+    Boxweight(int w,int h,int d,int w2)
+    {
+        super(w,h,d);
+        weight=w2;
+    }
+    void displayweight()
+    {
+        System.out.println("the weight of box:"+weight);
+    }
+}
+class Boxcolour extends Boxweight
+{
+    String colour;
+    Boxcolour()
+    {
+        super();
+        colour="red";
+    }
+    Boxcolour(int w,int h,int d,int w2,String c)
+    {
+        super(w,h,d,w2);
+        colour=c;
+    }
+    void displaycolour()
+    {
+        System.out.println("the colour of box:"+colour);
+    }
+}
+class Boxdemo
+{
+    public static void main(String args[])
+    {
+        Boxcolour c1=new Boxcolour(10,20,30,40,"blue");
+        c1.volume();
+        c1.displayweight();
+        c1.displaycolour();
+    }
+}
